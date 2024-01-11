@@ -20,11 +20,11 @@ const Header = () => {
             <BrandName></BrandName>
             <NavLinks className={isMobileMenuOpen ? 'open' : ''}>
             {navigation.map(({ node }) => (
-                // <li key={node.url}>
-                  <NavLink to={node.url} key={node.url} style={{color: 'black'}}>
-                    {node.title}
+                <li key={node.template}>
+                  <NavLink to={node.url} key={node.url} as={Link} style={{color: 'black'}} replace>
+                    {node.template}
                   </NavLink>
-                // </li>
+                 </li>
               ))}
             </NavLinks>
             <MobileMenuIcon

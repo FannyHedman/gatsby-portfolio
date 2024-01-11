@@ -7,7 +7,7 @@ const useNavigation = () => {
       allContentfulPage(sort: {url: ASC}) {
         edges {
           node {
-            title
+            template
             url
           }
         }
