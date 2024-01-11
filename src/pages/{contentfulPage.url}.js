@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql} from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
-import PortfolioTemplate from '../templates/portfolio-item'
+import PortfolioTemplate from '../templates/portfolio-template'
 import AboutTemplate from '../templates/about-template'
 import HomeTemplate from '../templates/home-template'
 
@@ -29,7 +29,7 @@ const Page = (props) => {
 export const data = graphql`
 query pageQuery($id: String) {
   contentfulPage(id: { eq: $id}) {
-    url 
+    url
     title
     template
   }
