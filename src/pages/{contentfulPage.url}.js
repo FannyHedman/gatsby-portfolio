@@ -35,6 +35,9 @@ query pageQuery($id: String) {
     url
     title
     template
+    image {
+      gatsbyImageData(width: 400)
+    }
   }
 }`
 
