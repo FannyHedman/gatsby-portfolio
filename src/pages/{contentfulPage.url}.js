@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import PortfolioTemplate from '../templates/portfolio-template'
 import AboutTemplate from '../templates/about-template'
 import HomeTemplate from '../templates/home-template'
+import ContactTemplate from "../templates/contact-template"
 
 const Page = (props) => {
   const {data} = props;
@@ -17,6 +18,8 @@ const Page = (props) => {
       return <AboutTemplate {...contentfulPage}/>;
       case 'portfolio' :
         return <PortfolioTemplate {...contentfulPage}/>
+        case 'contact' :
+      return <ContactTemplate {...contentfulPage}/>;
         // default bör vara defaultTemplate ej home
       default: return <HomeTemplate {...contentfulPage}/>
     }

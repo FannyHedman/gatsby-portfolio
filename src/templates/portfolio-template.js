@@ -6,6 +6,8 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { graphql, useStaticQuery } from "gatsby"
 // import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
+import { motion } from 'framer-motion'
+
 
 import Layout from "../components/layout"
 
@@ -34,13 +36,31 @@ const BlogTemplate = (contentfulPage) => {
   `)
 
   return (
-    <Layout>
+    <div>
       <PagePresentation>
+      <motion.div
+          initial={{ rotate: -180, scale: 1 }}
+          animate={{ rotate: 180, scale: -1 }}
+          transition={{
+              type: 'spring',
+              stiffness: 40,
+              damping: 10
+          }}>
         <PageTitle>Projects</PageTitle>
+        </motion.div>
         <PageDescriptionContainer>
+          <motion.div
+          initial={{ x: '100%', rotate: 90, scale: 0 }}
+          animate={{ x: 0, rotate: 180, scale: -1 }}
+          transition={{
+              type: 'spring',
+              stiffness: 600,
+              damping: 100
+          }}>
           <PageDescription>
             Browse through a collection of my work
           </PageDescription>
+          </motion.div>
         </PageDescriptionContainer>
       </PagePresentation>
       <PageContent>
@@ -50,11 +70,13 @@ const BlogTemplate = (contentfulPage) => {
               const slug = node.slug;
               return (
                 <ListItem key={node.id}>
+                  <motion.div>
                   <Title>
                     <ItemLink to={`/portfolio/${slug}`}>
                       {node.title}
                     </ItemLink>
                   </Title>
+                  </motion.div>
                   <Link to={`/portfolio/${slug}`}>
                     <ImageContainer>
                       <ProjectImage
@@ -72,7 +94,7 @@ const BlogTemplate = (contentfulPage) => {
       </PageContent>
       <p>Welcome to page 2</p>
       <Link to="/">Go back to the homepage</Link>
-    </Layout>
+    </div>
   )
 };
 
