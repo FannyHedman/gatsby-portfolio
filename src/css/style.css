@@ -2,3 +2,49 @@
 body {
   background-color: rgba(255, 190, 232, 0.46);
 }
+
+.clear {
+  background-color: blue;
+  width: 100px;
+  border-radius: 20px;
+}
+
+.circle {
+  margin: 10px 0;
+  background-color: blue;
+  color: white;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tube-left {
+  margin: 10px 0;
+  background-color: rgb(69, 69, 170);
+  color: white;
+  border-radius: 50px;
+  width: 100px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* transform: skewY(6deg); */
+  transform-origin: 0 100%;
+}
+
+.tube-right {
+  margin: 10px 0;
+  background-color: rgb(69, 69, 170);
+  color: white;
+  border-radius: 50px;
+  width: 100px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* transform: skewY(-4deg); */
+  transform-origin: 0 100%;
+}
