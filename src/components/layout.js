@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main style={{marginTop: '100px'}}>{children}</main>
+      <main style={{marginTop: '100px', marginBottom: '100px'}}>{children}</main>
       {/* <footer>Footer</footer> */}
     </>
   )
