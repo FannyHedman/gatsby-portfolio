@@ -20,11 +20,11 @@ const Header = () => {
             <BrandName></BrandName>
             <NavLinks className={isMobileMenuOpen ? 'open' : ''}>
             {navigation.map(({ node }) => (
-                <li key={node.template}>
-                  <NavLink to={node.url} key={node.url} as={Link} style={{color: 'black'}} replace>
+                <Links key={node.template} style={{}}>
+                  <Link to={node.url} key={node.url} as={Link} style={{textDecoration: 'none', color: 'black'}} replace>
                     {node.template}
-                  </NavLink>
-                 </li>
+                  </Link>
+                 </Links>
               ))}
             </NavLinks>
             <MobileMenuIcon
@@ -52,7 +52,7 @@ const NavbarContainer = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    /* background-color: rgba(255, 190, 232, 0.46); */
     color: #fff;
     padding: 20px 20px;
     z-index: 100;
@@ -92,14 +92,12 @@ const NavLinks = styled.div`
     }
 `
 
-const NavLink = styled(Link)`
-    text-decoration: none;
-    color: pink;
+const Links = styled.li`
+    list-style-type: none;
     margin: 0 15px;
     transition: transform 0.2s ease-in-out;
 
     &:hover {
-        text-decoration: none;
         transform: scale(1.1);
     }
 
