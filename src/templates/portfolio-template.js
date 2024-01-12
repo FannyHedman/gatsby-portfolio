@@ -1,19 +1,22 @@
-import React, { Fragment } from "react"
-import { Link } from "gatsby"
+import React, { Fragment } from 'react';
+import { Link } from 'gatsby';
 import { GatsbyImage } from "gatsby-plugin-image"
 // import * as React from "react"
 // import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
 // import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import { motion } from "framer-motion"
+import { motion } from 'framer-motion'
+
 
 import Layout from "../components/layout"
 
-import useAllBlogPosts from "../hooks/use-all-blog-posts"
 
-const BlogTemplate = contentfulPage => {
-  const data = useStaticQuery(graphql`
+import useAllBlogPosts from '../hooks/use-all-blog-posts';
+
+const BlogTemplate = (contentfulPage) => {
+
+    const data = useStaticQuery(graphql`
     query {
       allContentfulPosts(sort: { updatedAt: ASC }) {
         edges {
@@ -35,46 +38,44 @@ const BlogTemplate = contentfulPage => {
   return (
     <div>
       <PagePresentation>
-        <motion.div
-          initial={{ rotate: -180, scale: 1 }}
+      <motion.div
+          initial={{ rotate: 175, scale: 1 }}
           animate={{ rotate: 180, scale: -1 }}
           transition={{
-            type: "spring",
-            stiffness: 40,
-            damping: 10,
-          }}
-        >
-          <PageTitle>Projects</PageTitle>
+              type: 'spring',
+              stiffness: 40,
+              damping: 10
+          }}>
+        <PageTitle>Projects</PageTitle>
         </motion.div>
         <PageDescriptionContainer>
           <motion.div
-            initial={{ x: "100%", rotate: 90, scale: 0 }}
-            animate={{ x: 0, rotate: 180, scale: -1 }}
-            transition={{
-              type: "spring",
-              stiffness: 600,
-              damping: 100,
-            }}
-          >
-            <PageDescription>
-              Browse through a collection of my work
-            </PageDescription>
+ initial={{ rotate: 165, scale: -1 }}
+ animate={{ rotate: 180, scale: -1 }}
+ transition={{
+   type: "spring",
+   stiffness: 250,
+   damping: 10,
+ }}>
+          <PageDescription>
+            Browse through a collection of my work
+          </PageDescription>
           </motion.div>
         </PageDescriptionContainer>
       </PagePresentation>
       <PageContent>
         <ProjectContainer>
           <ProjectList>
-            {data.allContentfulPosts.edges.map(({ node }) => {
-              const slug = node.slug
+            {data.allContentfulPosts.edges.map(({node}) => {
+              const slug = node.slug;
               return (
                 <ListItem key={node.id}>
                   <motion.div>
-                    <Title>
-                      <ItemLink to={`/portfolio/${slug}`}>
-                        {node.title}
-                      </ItemLink>
-                    </Title>
+                  <Title>
+                    <ItemLink to={`/portfolio/${slug}`}>
+                      {node.title}
+                    </ItemLink>
+                  </Title>
                   </motion.div>
                   <Link to={`/portfolio/${slug}`}>
                     <ImageContainer>
@@ -95,9 +96,9 @@ const BlogTemplate = contentfulPage => {
       <Link to="/">Go back to the homepage</Link>
     </div>
   )
-}
+};
 
-export default BlogTemplate
+export default BlogTemplate;
 
 const PagePresentation = styled.div`
   display: flex;
@@ -118,9 +119,9 @@ const PagePresentation = styled.div`
 `
 
 const PageTitle = styled.h1`
-  font-family: "Titan One", sans-serif;
+  font-family: "DM Serif Display", serif;
   font-size: 72px;
-  color: red;
+  color: black;
 
   @media (max-width: 991px) {
     font-size: 64px;
@@ -134,9 +135,9 @@ const PageDescriptionContainer = styled.div`
 `
 
 const PageDescription = styled.p`
-  font-family: "Rubik Doodle Shadow", system-ui;
+  font-family: "Open Sans", sans-serif;
   font-size: 36px;
-  color: red;
+  color: black;
 
   /* Ipad */
   @media (max-width: 991px) {
