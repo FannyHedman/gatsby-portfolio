@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Chonburi&family=Comfortaa:wght@300&family=Coming+Soon&family=DM+Serif+Display&family=Monoton&family=Open+Sans:wght@300&family=Reenie+Beanie&family=Rubik+Doodle+Shadow&family=Titan+One&display=swap');
 body {
-  background-color: rgba(255, 190, 232, 0.46);
+  background-color: rgba(252, 198, 216, 0.185);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Add styles here for users who prefer reduced motion */
+  /* For example, static styles without animations */
+  motion.li {
+    transition: none;
+    &:hover {
+      transform: none;
+    }
+  }
 }
 
 .clear {
@@ -10,41 +21,51 @@ body {
 }
 
 .circle {
-  margin: 10px 0;
-  background-color: blue;
-  color: white;
-  border-radius: 50%;
+  margin: 20px 0;
+  background-color: rgb(148, 205, 251);
+  color: #E73C35;
+  border-radius: 8px;
   width: 100px;
-  height: 100px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
 }
 
 .tube-left {
   margin: 10px 0;
-  background-color: rgb(69, 69, 170);
-  color: white;
+  /* background-color: rgb(148, 205, 251); */
+  color: #E73C35;
   border-radius: 50px;
   width: 100px;
-  height: 60px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
   /* transform: skewY(6deg); */
   transform-origin: 0 100%;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+
 }
 
 .tube-right {
   margin: 10px 0;
-  background-color: rgb(69, 69, 170);
-  color: white;
+  /* background-color: rgb(142, 142, 244); */
+  color: #E73C35;
   border-radius: 50px;
   width: 100px;
-  height: 60px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   /* transform: skewY(-4deg); */
   transform-origin: 0 100%;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
 }

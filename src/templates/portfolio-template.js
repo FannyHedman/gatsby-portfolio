@@ -6,6 +6,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { graphql, useStaticQuery } from "gatsby"
 // import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
+import {textColor} from '../css/colors'
 import { motion } from 'framer-motion'
 
 
@@ -121,7 +122,7 @@ const PagePresentation = styled.div`
 const PageTitle = styled.h1`
   font-family: "DM Serif Display", serif;
   font-size: 72px;
-  color: black;
+  color: ${textColor};
 
   @media (max-width: 991px) {
     font-size: 64px;
@@ -137,7 +138,7 @@ const PageDescriptionContainer = styled.div`
 const PageDescription = styled.p`
   font-family: "Open Sans", sans-serif;
   font-size: 36px;
-  color: black;
+  color: ${textColor};
 
   /* Ipad */
   @media (max-width: 991px) {
@@ -196,7 +197,8 @@ const Title = styled.h2`
 `
 
 const ItemLink = styled(Link)`
-  color: black;
+  font-family: "DM Serif Display", serif;
+  color: ${textColor};
   text-decoration: none;
 `
 
