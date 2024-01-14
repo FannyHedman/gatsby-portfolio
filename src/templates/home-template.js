@@ -195,7 +195,6 @@
 //     justify-content: center;
 //       align-items: center;
 
-
 //   }
 // `
 
@@ -404,19 +403,19 @@
 //   /* ... (add styling as needed) */
 // `;
 
-
-import React from "react";
-import styled from "styled-components";
-import { GatsbyImage } from "gatsby-plugin-image";
-import { motion } from "framer-motion";
-import OptimizedSvg from '../images/Avatar-Maker.svg';
+import React from "react"
+import styled from "styled-components"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { motion } from "framer-motion"
+import {textColor} from '../css/colors'
+import OptimizedSvg from "../images/Avatar-Maker.svg"
 
 const HomeTemplate = ({ content, title, image }) => {
   return (
     <main>
       <div>
         <PagePresentation>
-          <motion.div
+          {/* <motion.div
             initial={{ rotate: 175, scale: 1 }}
             animate={{ rotate: 180, scale: -1 }}
             transition={{
@@ -424,9 +423,9 @@ const HomeTemplate = ({ content, title, image }) => {
               stiffness: 40,
               damping: 10,
             }}
-          >
+          > */}
             <PageTitle>Hello!</PageTitle>
-          </motion.div>
+          {/* </motion.div> */}
           <PageDescriptionContainer>
             <motion.div
               initial={{ rotate: 165, scale: -1 }}
@@ -438,9 +437,9 @@ const HomeTemplate = ({ content, title, image }) => {
               }}
             >
               <PageDescription>
-                I'm Fanny, a Stockholm based aspiring frontend developer. I'm passionate
-                about coding and creating, eager to gain professional experience
-                and expand my web development skills.{" "}
+                I'm Fanny, a Stockholm based aspiring frontend developer. I'm
+                passionate about coding and creating, eager to gain professional
+                experience and expand my web development skills.{" "}
               </PageDescription>
             </motion.div>
           </PageDescriptionContainer>
@@ -493,39 +492,217 @@ const HomeTemplate = ({ content, title, image }) => {
               <ThreeDivsContainer>
                 <StyledDiv>
                   <StyledUl>
-                    <StyledLi className="circle">JavaScript</StyledLi>
-                    <StyledLi className="tube-left">TypeScript</StyledLi>
-                    <StyledLi className="circle">React</StyledLi>
+                    <motion.li
+                      className="circle"
+                      initial={{ y: -500 }}
+                      animate={{ y: 0 }}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                      }}
+                    >
+                      JavaScript
+                    </motion.li>
+                    <motion.li
+                      className="tube-right"
+                      initial={{ x: 500 }}
+                      animate={{ x: -0 }}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                      }}
+                    >
+                      PHP
+                    </motion.li>{" "}
+                    <motion.li
+                      className="circle"
+                      initial={{ y: 500, x: 500 }}
+                      animate={{ y: -0, x: -0 }}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                      }}
+                    >
+                      React
+                    </motion.li>
                   </StyledUl>
                 </StyledDiv>
                 <StyledDiv>
                   <StyledUl>
-                    <StyledLi className="tube-right">CSS</StyledLi>
-                    <StyledLi className="circle">Bootstrap</StyledLi>
-                    <StyledLi className="tube-right">Node.js</StyledLi>
-
+                    <motion.li
+                      className="tube-left"
+                      initial={{ x: 500 }}
+                      animate={{ x: -0 }}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                      }}
+                    >
+                      Express
+                    </motion.li>{" "}
+                    <motion.li
+                      className="circle"
+                      initial={{ y: -500, x: 500 }}
+                      animate={{ y: 0, x:0 }}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                      }}
+                    >
+                      Bootstrap
+                    </motion.li>
+                    <motion.li
+                      className="tube-right"
+                      initial={{ y: 500 }}
+                      animate={{ y: -0 }}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                      }}
+                    >
+                      Node.js
+                    </motion.li>{" "}
                   </StyledUl>
                 </StyledDiv>
                 <StyledDiv>
                   <StyledUl>
-                    <StyledLi className="circle">Express</StyledLi>
-                    <StyledLi className="tube-right">Git</StyledLi>
-                    <StyledLi className="circle">Docker</StyledLi>
-
+                    <motion.li
+                      className="circle"
+                      initial={{ y: 500 }}
+                      animate={{ y: -0 }}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                      }}
+                    >
+                      CSS
+                    </motion.li>{" "}
+                    <motion.li
+                      className="tube-right"
+                      initial={{ x: 500 }}
+                      animate={{ x: -0 }}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                      }}
+                    >
+                      Git
+                    </motion.li>
+                    <motion.li
+                      className="circle"
+                      initial={{ y: -500 }}
+                      animate={{ y: 0 }}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                      }}
+                    >
+                      Vue.js
+                    </motion.li>
                   </StyledUl>
                 </StyledDiv>
                 <StyledDiv>
                   <StyledUl>
-                    <StyledLi className="tube-right">Wordpress</StyledLi>
-                    <StyledLi className="circle">Gatsby</StyledLi>
-                    <StyledLi className="tube-right">PostgreSQL</StyledLi>
+                    <motion.li
+                      className="tube-right"
+                      initial={{ y: -500 }}
+                      animate={{ y: 0 }}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                      }}
+                    >
+                      Wordpress
+                    </motion.li>{" "}
+                    <motion.li
+                      className="circle"
+                      initial={{ y: 500 }}
+                      animate={{ y: -0 }}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                      }}
+                    >
+                      Gatsby
+                    </motion.li>{" "}
+                    <motion.li
+                      className="tube-left"
+                      initial={{ x: 500 }}
+                      animate={{ x: -0 }}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                      }}
+                    >
+                      PostgreSQL
+                    </motion.li>{" "}
                   </StyledUl>
                 </StyledDiv>
                 <StyledDiv>
                   <StyledUl>
-                    <StyledLi className="circle">Vue.js</StyledLi>
-                    <StyledLi className="tube-right">HTML</StyledLi>
-                    <StyledLi className="circle">PHP</StyledLi>
+                    <motion.li
+                      className="circle"
+                      initial={{ x: 500 }}
+                      animate={{ x: -0 }}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                      }}
+                    >
+                      HTML
+                    </motion.li>{" "}
+                    <motion.li
+                      className="tube-right"
+                      initial={{ y: -500 }}
+                      animate={{ y: 0 }}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                      }}
+                    >
+                      Docker
+                    </motion.li>{" "}
+                    <motion.li
+                      className="circle"
+                      initial={{ y: 500 }}
+                      animate={{ y: -0 }}
+                      transition={{
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                      }}
+                    >
+                      TypeScript
+                    </motion.li>{" "}
                   </StyledUl>
                 </StyledDiv>
                 {/* Repeat the above structure for two more divs */}
@@ -535,10 +712,10 @@ const HomeTemplate = ({ content, title, image }) => {
         </PageContent>
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default HomeTemplate;
+export default HomeTemplate
 
 const PagePresentation = styled.div`
   display: flex;
@@ -556,27 +733,28 @@ const PagePresentation = styled.div`
   @media (max-width: 767px) {
     margin: 100px auto 0px auto;
   }
-`;
+`
 
 const PageTitle = styled.h1`
   font-family: "Rubik Doodle Shadow", system-ui;
   font-size: 72px;
-  color: black;
+  color: ${textColor};
 
   @media (max-width: 991px) {
     font-size: 64px;
     margin-left: 5%;
   }
-`;
+`
 
 const PageDescriptionContainer = styled.div`
   margin-top: 20px;
   margin-left: 40%;
-`;
+`
 
 const PageDescription = styled.p`
-  font-family: 'Caprasimo', serif;
+  font-family: "Caprasimo", serif;
   font-size: 28px;
+  color: #E73C35;
 
   /* Ipad */
   @media (max-width: 991px) {
@@ -588,11 +766,12 @@ const PageDescription = styled.p`
     font-size: 18px;
     font-weight: bold;
   }
-`;
+`
 
 const PageContent = styled.div`
   display: flex;
-  justify-content: left;
+  justify-content: center;
+  margin-right: 20%;
 
   /* Ipad */
   @media (max-width: 991px) {
@@ -603,16 +782,16 @@ const PageContent = styled.div`
     justify-content: center;
     align-items: center;
   }
-`;
+`
 
 const ProjectContainer = styled.div`
-  max-width: 800px;
+  max-width: 900px;
   width: 100%;
-`;
+`
 
 const StyledRow = styled.div`
   display: flex;
-`;
+`
 
 const CardContainer = styled.div`
   width: 50%;
@@ -630,7 +809,7 @@ const CardContainer = styled.div`
     width: 100%;
     margin-left: 0;
   }
-`;
+`
 
 const ThreeDivsContainer = styled.div`
   display: flex;
@@ -646,29 +825,29 @@ const ThreeDivsContainer = styled.div`
   @media (max-width: 767px) {
     width: 100%;
   }
-`;
+`
 
 const StyledDiv = styled.div`
   flex: 1;
-  margin: 2rem;
-`;
+  /* margin: 2rem; */
+`
 
 const StyledUl = styled.ul`
   list-style-type: none;
   margin: 20%;
-`;
+`
 
 const StyledLi = styled.li`
-  margin: 10px 0;
+  /* margin: 10px 0;
   padding: 10px;
   width: auto;
   background-color: white;
-  border-radius: 20px;
-`;
+  border-radius: 20px; */
+`
 
 const PinkFilteredImage = styled(GatsbyImage)`
   opacity: 0.7;
-`;
+`
 
 const Card = styled.div`
   position: relative;
@@ -685,12 +864,12 @@ const Card = styled.div`
   header {
     position: relative;
     width: 100%;
-    height: 60px;
-    background-color: blue;
+    height: 80px;
+    background-color: #23448a;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       bottom: 0;
@@ -729,10 +908,10 @@ const Card = styled.div`
     margin: 90px 0 40px;
     text-align: center;
     color: black;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: bold;
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -15px;
       left: 50%;
@@ -747,7 +926,7 @@ const Card = styled.div`
     text-align: center;
     line-height: 1.5;
     color: black;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: bold;
     margin-bottom: 3%;
   }
@@ -755,7 +934,7 @@ const Card = styled.div`
   footer {
     position: relative;
     height: 45px;
-    background-color: blue;
+    background-color: rgba(255, 190, 232, 0.46);
     text-align: center;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -768,7 +947,7 @@ const Card = styled.div`
       a {
         padding: 0 1rem;
         text-decoration: none;
-        font-family: 'Open Sans', sans-serif;
+        font-family: "Open Sans", sans-serif;
         font-weight: bold;
         color: white;
         transition: color 0.4s;
@@ -778,7 +957,7 @@ const Card = styled.div`
       }
     }
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0px;
       bottom: 0;
@@ -790,4 +969,4 @@ const Card = styled.div`
       border-bottom-right-radius: 20px;
     }
   }
-`;
+`

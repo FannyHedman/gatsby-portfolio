@@ -39,6 +39,7 @@
 
 import * as React from "react"
 import styled from "styled-components"
+import {textColor} from '../css/colors'
 import { GatsbyImage } from "gatsby-plugin-image"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { motion } from "framer-motion"
@@ -89,7 +90,7 @@ const Container = styled.div`
 const AboutTitle = styled.h2`
   font-family: "Rubik Doodle Shadow", system-ui;
   font-size: 64px;
-  color: rgba(15, 0, 131, 1);
+  color: #E73C35;
 `
 
 const ContentContainer = styled.div`
