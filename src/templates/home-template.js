@@ -1,416 +1,33 @@
-// import React from "react"
-// import styled from "styled-components"
-// import { GatsbyImage } from "gatsby-plugin-image"
-// import { motion } from "framer-motion"
-// import OptimizedSvg from '../images/Avatar-Maker.svg'
-
-// const HomeTemplate = ({ content, title, image }) => {
-//   return (
-//     <main>
-//       {/* <HomeTitle>{contentfulPage.title}</HomeTitle> */}
-//       <div>
-//         <PagePresentation>
-//           <motion.div
-//             initial={{ rotate: 175, scale: 1 }}
-//             animate={{ rotate: 180, scale: -1 }}
-//             transition={{
-//               type: "spring",
-//               stiffness: 40,
-//               damping: 10,
-//             }}
-//           >
-//             <PageTitle>Hello!</PageTitle>
-//           </motion.div>
-//           <PageDescriptionContainer>
-//             <motion.div
-//               initial={{ rotate: 165, scale: -1 }}
-//               animate={{ rotate: 180, scale: -1 }}
-//               transition={{
-//                 type: "spring",
-//                 stiffness: 250,
-//                 damping: 10,
-//               }}
-//             >
-//               <PageDescription>
-//                 I'm Fanny, a Stockholm based aspiring frontend developer. I'm passionate
-//                 about coding and creating, eager to gain professional experience
-//                 and expand my web development skills.{" "}
-//               </PageDescription>
-//             </motion.div>
-//           </PageDescriptionContainer>
-//         </PagePresentation>
-//         <PageContent>
-//           <ProjectContainer>
-//             {/* <OptimizedSvg/> */}
-//             <CardContainer>
-//             <Card>
-//                 <header>
-//                     <div className="avatar">
-//                         <PinkFilteredImage
-//                             alt={image.description}
-//                             image={image.gatsbyImageData}
-//                         />
-//                     </div>
-//                 </header>
-//                 <h3>Fanny Hedman</h3>
-//                 <div className="desc">
-//                     Feel free to follow me or download my resume
-//                 </div>
-//                 <footer>
-//                     <p>
-//                         <a
-//                             href="https://linkedin.com/in/fanny-hedman-744b44251"
-//                             target="_blank"
-//                             rel="noreferrer"
-//                         >
-//                             Linkedin
-//                         </a>
-//                         <a
-//                             href="https://github.com/FannyHedman"
-//                             target="_blank"
-//                             rel="noreferrer"
-//                         >
-//                             GitHub
-//                         </a>
-//                         <a
-//                             href="https://drive.google.com/file/d/1e-nGQDUfM6od8Z3e6dxoltbQbVxexqZa/view?usp=drive_link"
-//                             download="cv_portfolio.pdf"
-//                             target="_blank"
-//                             rel="noreferrer"
-//                         >
-//                             Resume
-//                         </a>
-//                     </p>
-//                 </footer>
-//             </Card>
-//         </CardContainer>
-//         <ThreeDivsContainer>
-//               <StyledDiv>
-//                 <StyledUl>
-//                   {/* Add your li elements here */}
-//                   <StyledLi>Item 1</StyledLi>
-//                   <StyledLi>Item 2</StyledLi>
-//                   <StyledLi>Item 3</StyledLi>
-//                   <StyledLi>Item 4</StyledLi>
-//                   <StyledLi>Item 5</StyledLi>
-//                 </StyledUl>
-//               </StyledDiv>
-//               <StyledDiv>
-//                 <StyledUl>
-//                   {/* Add your li elements here */}
-//                   <StyledLi>Item 1</StyledLi>
-//                   <StyledLi>Item 2</StyledLi>
-//                   <StyledLi>Item 3</StyledLi>
-//                   <StyledLi>Item 4</StyledLi>
-//                   <StyledLi>Item 5</StyledLi>
-//                 </StyledUl>
-//               </StyledDiv>
-//               <StyledDiv>
-//                 <StyledUl>
-//                   {/* Add your li elements here */}
-//                   <StyledLi>Item 1</StyledLi>
-//                   <StyledLi>Item 2</StyledLi>
-//                   <StyledLi>Item 3</StyledLi>
-//                   <StyledLi>Item 4</StyledLi>
-//                   <StyledLi>Item 5</StyledLi>
-//                 </StyledUl>
-//               </StyledDiv>
-//               {/* Repeat the above structure for two more divs */}
-//             </ThreeDivsContainer>
-//           </ProjectContainer>
-//         </PageContent>
-//       </div>
-//     </main>
-//   )
-// }
-
-// export default HomeTemplate
-
-// const HomeTitle = styled.h1`
-//   font-family: "Reenie Beanie", cursive;
-//   font-size: 72px;
-// `
-
-// const PagePresentation = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   max-width: 1200px;
-//   margin: 100px auto 50px auto;
-//   padding: 20px;
-
-//   /* Ipad */
-//   @media (max-width: 991px) {
-//     font-size: 28px;
-//   }
-
-//   /* Mobile */
-//   @media (max-width: 767px) {
-//     margin: 100px auto 0px auto;
-//   }
-// `
-
-// const PageTitle = styled.h1`
-//   font-family: "Rubik Doodle Shadow", system-ui;
-//   font-size: 72px;
-//   color: black;
-
-//   @media (max-width: 991px) {
-//     font-size: 64px;
-//     margin-left: 5%;
-//   }
-// `
-
-// const PageDescriptionContainer = styled.div`
-//   margin-top: 20px;
-//   margin-left: 40%;
-// `
-
-// const PageDescription = styled.p`
-// font-family: 'Caprasimo', serif;
-//   font-size: 28px;
-
-//   /* Ipad */
-//   @media (max-width: 991px) {
-//     font-size: 28px;
-//   }
-
-//   /* Mobile */
-//   @media (max-width: 767px) {
-//     font-size: 18px;
-//     font-weight: bold;
-//   }
-// `
-
-// const PageContent = styled.div`
-//   display: flex;
-//   justify-content: left;
-//   /* align-items: center; */
-
-//     /* Ipad */
-//     @media (max-width: 991px) {
-//   }
-
-//   /* Mobile */
-//   @media (max-width: 767px) {
-//     justify-content: center;
-//       align-items: center;
-
-//   }
-// `
-
-// const ProjectContainer = styled.div`
-//   max-width: 800px;
-//   width: 100%;
-// `
-
-// const ProjectList = styled.ul`
-//   list-style-type: none;
-// `
-
-// const ListItem = styled.li`
-//   position: relative;
-//   margin: 50px;
-// `
-
-// const Title = styled.h2`
-//   position: absolute;
-//   top: 45%;
-//   left: -100px;
-//   z-index: 1;
-//   /* color: #c3193a; */
-
-//   /* Ipad */
-//   @media (max-width: 991px) {
-//     position: relative;
-//     left: 0;
-//     font-size: 22px;
-//     color: black;
-//   }
-
-//   /* Mobile */
-//   @media (max-width: 767px) {
-//     position: relative;
-//     left: 0;
-//     font-size: 16px;
-//     color: black;
-//   }
-// `
-
-// const PinkFilteredImage = styled(GatsbyImage)`
-//     opacity: 0.7;
-// `
-
-// const CardContainer = styled.div`
-//     width: 100%;
-//     max-width: 100%;
-//     /* margin: 2rem auto; */
-//     margin-left: 50%;
-
-//         /* Ipad */
-//         @media (max-width: 991px) {
-//   }
-
-//   /* Mobile */
-//   @media (max-width: 767px) {
-//     margin-left: 8%;
-
-//   }
-// `
-
-// const Card = styled.div`
-//     position: relative;
-//     width: 300px;
-//     background: #fff;
-//     box-shadow: 10px 10px 7px -5px rgba(0, 0, 0, 0.3);
-//     transition: transform 0.2s ease-in-out;
-//     border-radius: 20px;
-
-//     &:hover {
-//         transform: scale(1.1);
-//     }
-
-//     header {
-//         position: relative;
-//         width: 100%;
-//         height: 60px;
-//         background-color: blue;
-//         border-top-right-radius: 20px;
-//         border-top-left-radius: 20px;
-//         &::after {
-//             content: '';
-//             position: absolute;
-//             top: 0;
-//             bottom: 0;
-//             left: 0;
-//             right: 0;
-//             background: inherit;
-//             transform: skewY(8deg);
-//             transform-origin: 0 100%;
-//             border-top-left-radius: 20px;
-
-//         }
-//         .avatar {
-//             position: absolute;
-//             left: 50%;
-//             top: 30px;
-//             margin-left: -50px;
-//             z-index: 5;
-//             width: 100px;
-//             height: 100px;
-//             border-radius: 50%;
-//             overflow: hidden;
-//             background: #ccc;
-//             border: 3px solid #fff;
-//             img {
-//                 position: absolute;
-//                 top: 50%;
-//                 left: 50%;
-//                 transform: translate(-50%, -50%);
-//                 width: 100px;
-//                 height: auto;
-//             }
-//         }
-//     }
-
-//     h3 {
-//         position: relative;
-//         margin: 90px 0 40px;
-//         text-align: center;
-//         color: black;
-//         font-family: 'Open Sans', sans-serif;
-//         font-weight: bold;
-//         &::after {
-//             content: '';
-//             position: absolute;
-//             bottom: -15px;
-//             left: 50%;
-//             margin-left: -15px;
-//             width: 30px;
-//             height: 1px;
-//             background: pink;
-//         }
-//     }
-//     .desc {
-//         padding: 0 1rem 2rem;
-//         text-align: center;
-//         line-height: 1.5;
-//         color: black;
-//         font-family: 'Open Sans', sans-serif;
-//         font-weight: bold;
-//         margin-bottom: 3%;
-//     }
-
-//     footer {
-//         position: relative;
-//         height: 45px;
-//         background-color: blue;
-//         text-align: center;
-//         border-bottom-left-radius: 20px;
-//         border-bottom-right-radius: 20px;
-//         p {
-//             position: absolute;
-//             bottom: 0;
-//             left: 0;
-//             width: 100%;
-//             z-index: 1;
-//             a {
-//                 padding: 0 1rem;
-//                 text-decoration: none;
-//                 font-family: 'Open Sans', sans-serif;
-//                 font-weight: bold;
-//                 color: white;
-//                 transition: color 0.4s;
-//                 &:hover {
-//                     color: purple;
-//                 }
-//             }
-//         }
-//         &::before {
-//             content: '';
-//             position: absolute;
-//             top: 0px;
-//             bottom: 0;
-//             left: 0;
-//             right: 0;
-//             background: inherit;
-//             transform: skewY(8deg);
-//             transform-origin: 100%;
-//             border-bottom-right-radius: 20px;
-//         }
-//     }
-// `
-// const ThreeDivsContainer = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   margin-top: 20px;
-
-//   /* Mobile */
-//   @media (max-width: 767px) {
-//     flex-direction: column;
-//     align-items: center;
-//   }
-// `;
-
-// const StyledDiv = styled.div`
-//   width: 30%; /* Adjust the width as needed */
-// `;
-
-// const StyledUl = styled.ul`
-//   /* ... (add styling as needed) */
-// `;
-
-// const StyledLi = styled.li`
-//   /* ... (add styling as needed) */
-// `;
-
 import React from "react"
 import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 import { motion } from "framer-motion"
-import {textColor} from '../css/colors'
+import { textColor } from "../css/colors"
 import OptimizedSvg from "../images/Avatar-Maker.svg"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { useStaticQuery, graphql } from "gatsby"
 
 const HomeTemplate = ({ content, title, image }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulContactInformation {
+        edges {
+          node {
+            id
+            contactImage {
+              gatsbyImage(width: 600)
+            }
+            contactLinks {
+              raw
+            }
+            contactText
+            title
+          }
+        }
+      }
+    }
+  `)
   return (
     <main>
       <div>
@@ -424,7 +41,7 @@ const HomeTemplate = ({ content, title, image }) => {
               damping: 10,
             }}
           > */}
-            <PageTitle>Hello!</PageTitle>
+          <PageTitle>Hello!</PageTitle>
           {/* </motion.div> */}
           <PageDescriptionContainer>
             <motion.div
@@ -437,9 +54,7 @@ const HomeTemplate = ({ content, title, image }) => {
               }}
             >
               <PageDescription>
-                I'm Fanny, a Stockholm based aspiring frontend developer. I'm
-                passionate about coding and creating, eager to gain professional
-                experience and expand my web development skills.{" "}
+                {documentToReactComponents(JSON.parse(content.raw))}
               </PageDescription>
             </motion.div>
           </PageDescriptionContainer>
@@ -448,45 +63,27 @@ const HomeTemplate = ({ content, title, image }) => {
           <ProjectContainer>
             <StyledRow>
               <CardContainer>
+                {/* Card positioned slightly over PinkFilteredImage */}
+                <PinkFilteredImage
+                  alt={image.description}
+                  image={image.gatsbyImageData}
+                />
                 <Card>
-                  <header>
-                    <div className="avatar">
-                      <PinkFilteredImage
-                        alt={image.description}
-                        image={image.gatsbyImageData}
-                      />
-                    </div>
-                  </header>
-                  <h3>Fanny Hedman</h3>
-                  <div className="desc">
-                    Feel free to follow me or download my resume
-                  </div>
-                  <footer>
-                    <p>
-                      <a
-                        href="https://linkedin.com/in/fanny-hedman-744b44251"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Linkedin
-                      </a>
-                      <a
-                        href="https://github.com/FannyHedman"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        GitHub
-                      </a>
-                      <a
-                        href="https://drive.google.com/file/d/1e-nGQDUfM6od8Z3e6dxoltbQbVxexqZa/view?usp=drive_link"
-                        download="cv_portfolio.pdf"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Resume
-                      </a>
-                    </p>
-                  </footer>
+                  {data.allContentfulContactInformation.edges.map(
+                    ({ node }) => (
+                      <CardDiv key={node.id}>
+                        <CardHeading>{node.title}</CardHeading>
+                        <CardText>{node.contactText}</CardText>
+                        <CardList>
+                          <CardListItem>
+                            {documentToReactComponents(
+                              JSON.parse(node.contactLinks.raw)
+                            )}
+                          </CardListItem>
+                        </CardList>
+                      </CardDiv>
+                    )
+                  )}
                 </Card>
               </CardContainer>
               <ThreeDivsContainer>
@@ -551,7 +148,7 @@ const HomeTemplate = ({ content, title, image }) => {
                     <motion.li
                       className="circle"
                       initial={{ y: -500, x: 500 }}
-                      animate={{ y: 0, x:0 }}
+                      animate={{ y: 0, x: 0 }}
                       transition={{
                         duration: 0.5,
                         type: "spring",
@@ -754,7 +351,7 @@ const PageDescriptionContainer = styled.div`
 const PageDescription = styled.p`
   font-family: "Caprasimo", serif;
   font-size: 28px;
-  color: #E73C35;
+  color: #e73c35;
 
   /* Ipad */
   @media (max-width: 991px) {
@@ -846,127 +443,68 @@ const StyledLi = styled.li`
 `
 
 const PinkFilteredImage = styled(GatsbyImage)`
-  opacity: 0.7;
+  /* Add the following styles for positioning */
+  position: absolute;
+  /* bottom: 0;
+  left: 0; */
+  width: 300px;
+  transform: rotate(-8deg);
+  transition: transform 0.5s ease; /* Default transition for slower effect */
+  &:hover {
+    transform: rotate(-5deg); /* Rotate in the opposite direction */
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+  }
 `
 
 const Card = styled.div`
+  /* Add the following styles for positioning */
   position: relative;
-  width: 300px;
-  background: #fff;
-  box-shadow: 10px 10px 7px -5px rgba(0, 0, 0, 0.3);
+  z-index: 1; /* Make sure Card is above PinkFilteredImage */
+  margin-top: 65%; /* Adjust this value as needed */
+  width: 200px;
+  margin-left: -28%; /* Adjust this value to stretch towards the right */
+  height: 250px;
+  background-color: rgba(252, 253, 205, 1);
+  /* border: 4px solid #99c3ff; */
+  border: 1px solid rgb(148, 205, 251);
+  border-radius: 5px;
+  /* box-shadow: 10px 10px 7px -5px rgba(0, 0, 0, 0.3); */
+  /* box-shadow: 5px 5px 0px #b0d0ff, 10px 10px 0px #c0daff; */
+  box-shadow: 6px 6px 0px rgb(148, 205, 251);
   transition: transform 0.2s ease-in-out;
-  border-radius: 20px;
 
   &:hover {
     transform: scale(1.1);
   }
+`
+const CardDiv = styled.div`
+  margin: 10%;
+`
 
-  header {
-    position: relative;
-    width: 100%;
-    height: 80px;
-    background-color: #23448a;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: inherit;
-      transform: skewY(8deg);
-      transform-origin: 0 100%;
-      border-top-left-radius: 20px;
-    }
-    .avatar {
-      position: absolute;
-      left: 50%;
-      top: 30px;
-      margin-left: -50px;
-      z-index: 5;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      overflow: hidden;
-      background: #ccc;
-      border: 3px solid #fff;
-      img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100px;
-        height: auto;
-      }
-    }
-  }
+const CardHeading = styled.h5`
+  font-family: "Rubik Doodle Shadow", system-ui;
+  font-size: 18px;
+  color: rgb(148, 205, 251);
+`
 
-  h3 {
-    position: relative;
-    margin: 90px 0 40px;
-    text-align: center;
-    color: black;
-    font-family: "Open Sans", sans-serif;
-    font-weight: bold;
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      margin-left: -15px;
-      width: 30px;
-      height: 1px;
-      background: pink;
-    }
-  }
-  .desc {
-    padding: 0 1rem 2rem;
-    text-align: center;
-    line-height: 1.5;
-    color: black;
-    font-family: "Open Sans", sans-serif;
-    font-weight: bold;
-    margin-bottom: 3%;
-  }
+const CardText = styled.p`
+  color: rgb(148, 205, 251);
+`
 
-  footer {
-    position: relative;
-    height: 45px;
-    background-color: rgba(255, 190, 232, 0.46);
-    text-align: center;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    p {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1;
-      a {
-        padding: 0 1rem;
-        text-decoration: none;
-        font-family: "Open Sans", sans-serif;
-        font-weight: bold;
-        color: white;
-        transition: color 0.4s;
-        &:hover {
-          color: purple;
-        }
-      }
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0px;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: inherit;
-      transform: skewY(8deg);
-      transform-origin: 100%;
-      border-bottom-right-radius: 20px;
-    }
+const CardList = styled.ul`
+  list-style-type: none;
+`
+
+const CardListItem = styled.li`
+  text-decoration: none;
+  color: black;
+  a {
+    color: rgb(148, 205, 251);
+    text-decoration: none;
   }
+`
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: black;
 `
