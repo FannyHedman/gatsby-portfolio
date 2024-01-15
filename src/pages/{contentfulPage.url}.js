@@ -39,7 +39,7 @@ query pageQuery($id: String) {
       raw
     }
     image {
-      gatsbyImageData(width: 400)
+      gatsbyImageData(width: 900)
     }
   }
 }`
