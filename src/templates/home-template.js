@@ -41,7 +41,7 @@ const HomeTemplate = ({ content, title, image }) => {
               damping: 10,
             }}
           > */}
-          <PageTitle>Hello!</PageTitle>
+          <PageTitle>{title}!</PageTitle>
           {/* </motion.div> */}
           <PageDescriptionContainer>
             <motion.div
@@ -63,7 +63,6 @@ const HomeTemplate = ({ content, title, image }) => {
           <ProjectContainer>
             <StyledRow>
               <CardContainer>
-                {/* Card positioned slightly over PinkFilteredImage */}
                 <PinkFilteredImage
                   alt={image.description}
                   image={image.gatsbyImageData}
