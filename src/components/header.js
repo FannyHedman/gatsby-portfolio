@@ -5,36 +5,83 @@ import useNavigation from "../hooks/use-navigation"
 import styled from "styled-components"
 import { useState } from "react"
 
-const Header = () => {
-  const navigation = useNavigation()
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false)
+// const Header = () => {
+//   const navigation = useNavigation()
+//   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+//   const toggleMobileMenu = () => {
+//     setMobileMenuOpen(!isMobileMenuOpen)
+//   }
+
+//   return (
+//     <div>
+//       <NavbarContainer>
+//         <BrandName></BrandName>
+//         <NavLinks className={isMobileMenuOpen ? "open" : ""}>
+//           {navigation.map(({ node }) => (
+//             <Links key={node.template} style={{}}>
+//               <Link
+//                 to={node.url}
+//                 key={node.url}
+//                 as={Link}
+//                 style={{ textDecoration: "none", color: "rgb(148, 205, 251)" }}
+//                 replace
+//               >
+//                 {node.template}
+//               </Link>
+//             </Links>
+//           ))}
+//         </NavLinks>
+//         <MobileMenuIcon
+//           onClick={toggleMobileMenu}
+//           className={isMobileMenuOpen ? "open" : ""}
+//         >
+//           <div></div>
+//           <div></div>
+//           <div></div>
+//         </MobileMenuIcon>
+//       </NavbarContainer>
+//     </div>
+//   )
+// }
+
+// export default Header
+
+const Header = () => {
+  // Uses hook for navigation
+  const navigation = useNavigation();
+  
+  // Handles mobile mode navbar (hamburger)
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => {
-    setMobileMenuOpen(!isMobileMenuOpen)
-  }
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
     <div>
       <NavbarContainer>
         <BrandName></BrandName>
-        <NavLinks className={isMobileMenuOpen ? "open" : ""}>
+        <NavLinks className={isMobileMenuOpen ? 'open' : ''}>
           {navigation.map(({ node }) => (
-            <Links key={node.template} style={{}}>
-              <Link
-                to={node.url}
-                key={node.url}
-                as={Link}
-                style={{ textDecoration: "none", color: "rgb(148, 205, 251)" }}
-                replace
-              >
-                {node.template}
-              </Link>
-            </Links>
+            // Only render links that are not the 404 page
+            node.template !== '404' && (
+              <Links key={node.template} style={{}}>
+                <Link
+                  to={node.url}
+                  key={node.url}
+                  as={Link}
+                  style={{ textDecoration: 'none', color: 'rgb(148, 205, 251)' }}
+                  replace
+                >
+                  {node.template}
+                </Link>
+              </Links>
+            )
           ))}
         </NavLinks>
         <MobileMenuIcon
           onClick={toggleMobileMenu}
-          className={isMobileMenuOpen ? "open" : ""}
+          className={isMobileMenuOpen ? 'open' : ''}
         >
           <div></div>
           <div></div>
@@ -42,10 +89,10 @@ const Header = () => {
         </MobileMenuIcon>
       </NavbarContainer>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
 
 const NavbarContainer = styled.nav`
   position: fixed;

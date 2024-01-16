@@ -1,21 +1,15 @@
 import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage } from "gatsby-plugin-image"
-// import * as React from "react"
-// import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
-// import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import {textColor} from '../css/colors'
 import { motion } from 'framer-motion'
+import { Helmet } from "react-helmet"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 
-import Layout from "../components/layout"
-
-
-import useAllBlogPosts from '../hooks/use-all-blog-posts';
-
-const BlogTemplate = (contentfulPage) => {
+const BlogTemplate = ({title, content, image}) => {
 
     const data = useStaticQuery(graphql`
     query {
@@ -38,6 +32,9 @@ const BlogTemplate = (contentfulPage) => {
 
   return (
     <div>
+      <Helmet>
+        <meta name="description" content="Portfolio items"/>
+      </Helmet>
       <PagePresentation>
       <motion.div
           initial={{ rotate: 175, scale: 1 }}
@@ -47,7 +44,7 @@ const BlogTemplate = (contentfulPage) => {
               stiffness: 40,
               damping: 10
           }}>
-        <PageTitle>Projects</PageTitle>
+        <PageTitle>{title}</PageTitle>
         </motion.div>
         <PageDescriptionContainer>
           <motion.div
@@ -59,7 +56,7 @@ const BlogTemplate = (contentfulPage) => {
    damping: 10,
  }}>
           <PageDescription>
-            Browse through a collection of my work
+          {documentToReactComponents(JSON.parse(content.raw))}
           </PageDescription>
           </motion.div>
         </PageDescriptionContainer>
