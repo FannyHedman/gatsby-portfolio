@@ -9,6 +9,8 @@ const useNavigation = () => {
           node {
             template
             url
+            title
+            id
           }
         }
       }

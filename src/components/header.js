@@ -50,7 +50,7 @@ import { useState } from "react"
 const Header = () => {
   // Uses hook for navigation
   const navigation = useNavigation();
-  
+
   // Handles mobile mode navbar (hamburger)
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => {
@@ -60,14 +60,15 @@ const Header = () => {
   return (
     <div>
       <NavbarContainer>
-        <BrandName></BrandName>
+        <BrandName><Link to='/'>hem link</Link></BrandName>
         <NavLinks className={isMobileMenuOpen ? 'open' : ''}>
+        <Link to='/'>hem link</Link>
           {navigation.map(({ node }) => (
             // Only render links that are not the 404 page
             node.template !== '404' && (
               <Links key={node.template} style={{}}>
                 <Link
-                  to={node.url}
+                  to={`/${node.url}`}
                   key={node.url}
                   as={Link}
                   style={{ textDecoration: 'none', color: 'rgb(148, 205, 251)' }}
