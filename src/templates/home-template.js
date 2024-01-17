@@ -71,7 +71,7 @@ const HomeTemplate = ({ content, title, image }) => {
                   {data.allContentfulContactInformation.edges.map(
                     ({ node }) => (
                       <CardDiv key={node.id}>
-                        <CardHeading>{node.title}</CardHeading>
+                        {/* <CardHeading>{node.title}</CardHeading> */}
                         <CardText>{node.contactText}</CardText>
                         <CardList>
                           <CardListItem>
@@ -397,7 +397,7 @@ const CardContainer = styled.div`
   /* Ipad */
   @media (max-width: 991px) {
     width: 100%;
-    margin-left: 0;
+    margin-left: 30%;
   }
 
   /* Mobile */
@@ -413,13 +413,13 @@ const ThreeDivsContainer = styled.div`
   max-width: 100%;
 
   /* Ipad */
-  @media (max-width: 991px) {
-    width: 100%;
+  @media (max-width: 1024px) {
+    display: none;
   }
 
   /* Mobile */
   @media (max-width: 767px) {
-    width: 100%;
+   display: none;
   }
 `
 
@@ -442,64 +442,93 @@ const StyledLi = styled.li`
 `
 
 const PinkFilteredImage = styled(GatsbyImage)`
-  /* Add the following styles for positioning */
   position: absolute;
   /* bottom: 0;
   left: 0; */
   width: 300px;
   transform: rotate(-8deg);
-  transition: transform 0.5s ease; /* Default transition for slower effect */
+  transition: transform 0.5s ease;
   &:hover {
-    transform: rotate(-5deg); /* Rotate in the opposite direction */
-    transition: transform 0.3s ease; /* Add a smooth transition effect */
+    transform: rotate(-5deg);
+    transition: transform 0.3s ease;
+  }
+
+  /* Ipad */
+  @media (max-width: 991px) {
+    /* display: none; */
+  }
+
+  /* Mobile */
+  @media (max-width: 767px) {
+   display: none;
   }
 `
 
 const Card = styled.div`
-  /* Add the following styles for positioning */
   position: relative;
   z-index: 1; /* Make sure Card is above PinkFilteredImage */
-  margin-top: 65%; /* Adjust this value as needed */
+  margin-top: 65%;
   width: 200px;
-  margin-left: -28%; /* Adjust this value to stretch towards the right */
+  margin-left: -28%;
   height: 250px;
-  background-color: rgba(252, 253, 205, 1);
+  background-color: #E9DDED;
   /* border: 4px solid #99c3ff; */
-  border: 1px solid rgb(148, 205, 251);
+  border: 2px solid ${textColor};
   border-radius: 5px;
   /* box-shadow: 10px 10px 7px -5px rgba(0, 0, 0, 0.3); */
   /* box-shadow: 5px 5px 0px #b0d0ff, 10px 10px 0px #c0daff; */
-  box-shadow: 6px 6px 0px rgb(148, 205, 251);
+  box-shadow: 6px 6px 0px ${textColor};
   transition: transform 0.2s ease-in-out;
 
   &:hover {
     transform: scale(1.1);
   }
+
+  /* Ipad */
+  @media (max-width: 1024px) {
+    margin-top: 50%;
+  width: 200px;
+  margin-left: -12%;
+  height: 250px;
+  }
+
+  /* Mobile */
+  @media (max-width: 767px) {
+   margin-left: 30%;
+   margin-top: 10%;
+  }
 `
+
 const CardDiv = styled.div`
   margin: 10%;
 `
 
 const CardHeading = styled.h5`
-  font-family: "Rubik Doodle Shadow", system-ui;
+  font-family: "Caprasimo", serif;
   font-size: 18px;
-  color: rgb(148, 205, 251);
+  color: ${textColor};
 `
 
 const CardText = styled.p`
-  color: rgb(148, 205, 251);
+  color: ${textColor};
+  font-family: "Caprasimo", serif;
 `
 
 const CardList = styled.ul`
   list-style-type: none;
+
 `
 
 const CardListItem = styled.li`
   text-decoration: none;
   color: black;
+  align-items: center;
+
   a {
-    color: rgb(148, 205, 251);
+    color: ${textColor};
     text-decoration: none;
+    font-family: "Caprasimo", serif;
+    font-size: 14px;
   }
 `
 

@@ -52,6 +52,17 @@ const AboutTitle = styled.h2`
   font-family: "Rubik Doodle Shadow", system-ui;
   font-size: 64px;
   color: #E73C35;
+
+   /* Ipad */
+   @media (max-width: 991px) {
+    font-size: 36px;
+  }
+
+  /* Mobile */
+  @media (max-width: 767px) {
+    /* margin: 100px auto 0px auto; */
+    font-size: 28px;
+  }
 `
 
 const ContentContainer = styled.div`
@@ -81,7 +92,7 @@ const LeftDiv = styled.div`
 /* Ipad */
     @media (max-width: 991px) {
         flex: auto;
-        margin-left: 60%;
+        margin-left: 0;
         text-align: center;
         max-width: 100%;
     }
@@ -104,7 +115,6 @@ const TextDiv = styled.div`
   box-sizing: border-box;
   padding: 20px;
 
-
   @media (max-width: 767px) {
     width: 80%;
   }
@@ -124,6 +134,7 @@ flex: 1;
         max-width: 500px;
     }
 
+    /* Mobile */
     @media (max-width: 767px) {
         flex: auto;
         text-align: center;
@@ -142,5 +153,16 @@ const AboutImage = styled(GatsbyImage)`
     transform: rotate(-5deg); /* Rotate in the opposite direction */
     transition: transform 0.3s ease; /* Add a smooth transition effect */
   }
+
+  /* Ipad */
+  @media (max-width: 991px) {
+        margin-left: 0;
+        /* width: 70%; */
+    }
+/* Mobile */
+    @media (max-width: 767px) {
+        margin-left: 0;
+
+    }
 
 `
