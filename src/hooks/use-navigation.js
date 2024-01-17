@@ -18,7 +18,7 @@ const useNavigation = () => {
   `);
 
   // Filter out the 404 page (so that it does not show up in the navbar)
-  const filteredNavigation = allContentfulPage.edges.filter(({ node }) => node.url !== '404');
+  const filteredNavigation = allContentfulPage.edges.filter(({ node }) => node.url !== '404' && node.url !== '/');
 
   return filteredNavigation;
 };
