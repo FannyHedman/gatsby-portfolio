@@ -47,18 +47,10 @@ const BlogTemplate = ({title, content, image}) => {
         <PageTitle>{title}</PageTitle>
         </motion.div>
         <PageDescriptionContainer>
-          <motion.div
- initial={{ rotate: 165, scale: -1 }}
- animate={{ rotate: 180, scale: -1 }}
- transition={{
-   type: "spring",
-   stiffness: 250,
-   damping: 10,
- }}>
+
           <PageDescription>
           {documentToReactComponents(JSON.parse(content.raw))}
           </PageDescription>
-          </motion.div>
         </PageDescriptionContainer>
       </PagePresentation>
       <PageContent>
