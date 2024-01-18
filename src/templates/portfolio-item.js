@@ -68,7 +68,7 @@ const AboutTitle = styled.h2`
   font-family: "Rubik Doodle Shadow", system-ui;
   font-size: 64px;
   color: #e73c35;
-  
+
   /* Ipad */
   @media (max-width: 991px) {
     font-size: 36px;
@@ -162,13 +162,9 @@ const AboutImage = styled(GatsbyImage)`
   /* width: 48%;  */
   border-radius: 8px;
   /* transform: rotate(5deg); */
-  transition: transform 0.5s ease; /* Default transition for slower effect */
   /* padding: 20px; */
   margin-left: 20%;
-  &:hover {
-    transform: rotate(-5deg); /* Rotate in the opposite direction */
-    transition: transform 0.3s ease; /* Add a smooth transition effect */
-  }
+
 
   /* Ipad */
   @media (max-width: 991px) {
