@@ -470,7 +470,7 @@ const Card = styled.div`
   margin-top: 65%;
   width: 200px;
   margin-left: -28%;
-  height: 250px;
+  height: 200px;
   background-color: #E9DDED;
   /* border: 4px solid #99c3ff; */
   border: 2px solid ${textColor};
@@ -478,11 +478,11 @@ const Card = styled.div`
   /* box-shadow: 10px 10px 7px -5px rgba(0, 0, 0, 0.3); */
   /* box-shadow: 5px 5px 0px #b0d0ff, 10px 10px 0px #c0daff; */
   box-shadow: 6px 6px 0px ${textColor};
-  transition: transform 0.2s ease-in-out;
+  /* transition: transform 0.2s ease-in-out;
 
   &:hover {
     transform: scale(1.1);
-  }
+  } */
 
   /* Ipad */
   @media (max-width: 1024px) {
@@ -512,6 +512,7 @@ const CardHeading = styled.h5`
 const CardText = styled.p`
   color: ${textColor};
   font-family: "Caprasimo", serif;
+  font-size: 18px;
 `
 
 const CardList = styled.ul`
@@ -527,8 +528,12 @@ const CardListItem = styled.li`
   a {
     color: ${textColor};
     text-decoration: none;
-    font-family: "Caprasimo", serif;
-    font-size: 14px;
+    font-family: "DM Serif Display", serif;
+    font-size: 16px;
+    transition: color 0.4s;
+                &:hover {
+                    color: lightskyblue;
+                }
   }
 `
 

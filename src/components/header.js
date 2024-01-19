@@ -267,6 +267,7 @@ const Links = styled.li`
 
   @media (max-width: 767px) {
     padding: 1%;
+    font-weight: bold;
   }
 `;
 
@@ -282,6 +283,7 @@ transition: transform 0.2s ease-in-out;
 
 @media (max-width: 767px) {
   padding: 1%;
+  font-weight: bold;
 }
 `
 
